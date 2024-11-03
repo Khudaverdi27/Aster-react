@@ -1,3 +1,5 @@
+import objectToQueryString from "../utils/helper";
+
 const base_URL = import.meta.env.VITE_NEWSAPI_URL;
 
 const fetchRequest = async (base_URL, url, method, params = false) => {
@@ -38,4 +40,9 @@ const fetchRequest = async (base_URL, url, method, params = false) => {
   }
 };
 
-export const get = (url) => fetchRequest(base_URL, url, "GET");
+export const get = (url, params = false) =>
+  fetchRequest(
+    base_URL,
+    url + (params ? objectToQueryString(params) : ""),
+    "GET"
+  );
