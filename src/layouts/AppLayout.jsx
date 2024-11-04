@@ -1,7 +1,7 @@
 import React from "react";
 import { NavbarComponent } from "../components/Navbar/NavbarComponent";
 import { Header } from "../components/common/Header";
-export const AppLayout = () => {
+export const AppLayout = ({ children }) => {
   return (
     <main className="w-[1300px] mx-auto flex ">
       <div className="w-[240px]">
@@ -9,7 +9,7 @@ export const AppLayout = () => {
       </div>
       <div className="relative flex-1 ">
         <Header />
-        <div className="w-[200px]">rightBAR</div>
+        <div className="max-w-[840px]">{children}</div>
       </div>
     </main>
   );

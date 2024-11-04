@@ -13,7 +13,7 @@ export const Header = () => {
         <button>Mode</button>
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="menu-link flex items-center space-x-2">
         {menus.map((item, index) => (
           <NavLink className="flex items-center " to={item.path} key={index}>
             <span>{item.icon}</span>
