@@ -26,7 +26,7 @@ export const NavbarComponent = () => {
   }, []);
 
   return (
-    <aside className="pl-8">
+    <aside className="pl-8 !bg-white">
       <div>
         <Logo />
       </div>

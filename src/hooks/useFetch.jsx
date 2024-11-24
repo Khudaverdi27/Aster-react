@@ -5,6 +5,7 @@ import {
   ServiceNewsFetchList,
 } from "../services/NewsService";
 import { ServiceAuthorFetchList } from "../services/AuthorService";
+import { serviceWeather } from "../services/WeatherService";
 
 const useFetch = (state = false) => {
   const [data, setData] = useState(state);
@@ -57,4 +58,13 @@ export const useFetchAuthorList = () => {
   };
 
   return [data?.data || [], authorFetch, loading];
+};
+
+export const useFetchWeatherData = () => {
+  const [data, fetch, loading] = useFetch();
+  const apiFetch = async () => {
+    fetch(serviceWeather);
+  };
+
+  return [data || {}, apiFetch, loading];
 };

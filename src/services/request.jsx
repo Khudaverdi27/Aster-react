@@ -1,6 +1,7 @@
 import { objectToQueryString } from "../utils/helper";
 
 const base_URL = import.meta.env.VITE_NEWSAPI_URL;
+const base_Weather_URL = import.meta.env.VITE_WEATHER_URL;
 
 const fetchRequest = async (base_URL, url, method, params = false) => {
   let token = "";
@@ -46,3 +47,5 @@ export const get = (url, params = false) =>
     url + (params ? "?" + objectToQueryString(params) : ""),
     "GET"
   );
+
+export const getWeather = (url) => fetchRequest(base_Weather_URL, url, "GET");
