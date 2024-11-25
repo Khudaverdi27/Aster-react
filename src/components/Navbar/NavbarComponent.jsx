@@ -43,7 +43,7 @@ export const NavbarComponent = () => {
           categories.map((c, index) => (
             <NavLink
               key={index}
-              to={"#"}
+              to={`/search/${c.slug}`}
               className={
                 "flex items-center h-12 rounded-tr-full rounded-br-full  text-amberBlack space-x-5 "
               }

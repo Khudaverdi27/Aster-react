@@ -48,4 +48,7 @@ export const get = (url, params = false) =>
     "GET"
   );
 
+export const post = (url, params) =>
+  fetchRequest(base_URL, url, "POST", params);
+
 export const getWeather = (url) => fetchRequest(base_Weather_URL, url, "GET");

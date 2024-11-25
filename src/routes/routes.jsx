@@ -3,6 +3,7 @@ import { Home } from "../pages/Home/Home";
 import { About } from "../pages/About/About";
 import { Contact } from "../pages/Contact/Contact";
 import { AppLayout } from "../layouts/AppLayout";
+import { Search } from "../pages/Search/Search";
 
 export const routes = createBrowserRouter([
   {
@@ -20,5 +21,13 @@ export const routes = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/search/:slug",
+    element: (
+      <AppLayout>
+        <Search />,
+      </AppLayout>
+    ),
   },
 ]);
